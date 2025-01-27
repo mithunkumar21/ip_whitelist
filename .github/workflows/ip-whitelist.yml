@@ -17,13 +17,13 @@ on:
         required: true
         type: string
         default: 192.x.x.x  
-        
+
       Firewall_Name:
         description: 'Firewall rule name'
         required: true
         type: string
         default: Trumio-IP
-        # Only ask for Start_IP_Address when PostgreSQL is selected
+        # Only ask for Firewall_Name when PostgreSQL is selected
         if: ${{ inputs.environment == 'PostgreSQL' }}        
       Start_IP_Address:
         description: 'Provide your IPv4 or IPv6 start address/range'
