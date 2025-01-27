@@ -11,13 +11,20 @@ on:
         options:
           - UAT
           - PROD
-          - PostgreSQL
       ip_address:
         description: 'Provide your IPv4 or IPv6 address/range'
         required: true
         type: string
         default: 192.x.x.x  
 
+    inputs:
+      environment:
+        description: "Select the environment to whitelist IPs for"
+        required: true
+        type: choice
+        default: "PostgreSQL"
+        options:
+          - PostgreSQL
       Firewall_Name:
         description: 'Firewall rule name'
         required: true
