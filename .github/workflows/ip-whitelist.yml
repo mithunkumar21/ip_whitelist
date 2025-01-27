@@ -30,22 +30,22 @@ on:
         required: true
         type: string
         default: Trumio-IP
-        # Only ask for Firewall_Name when PostgreSQL is selected
-        if: ${{ inputs.environment == 'PostgreSQL' }}        
+        # # Only ask for Firewall_Name when PostgreSQL is selected
+        # if: ${{ inputs.environment == 'PostgreSQL' }}        
       Start_IP_Address:
         description: 'Provide your IPv4 or IPv6 start address/range'
         required: true
         type: string
         default: 0.0.0.0
-        # Only ask for Start_IP_Address when PostgreSQL is selected
-        if: ${{ inputs.environment == 'PostgreSQL' }}        
+        # # Only ask for Start_IP_Address when PostgreSQL is selected
+        # if: ${{ inputs.environment == 'PostgreSQL' }}        
       End_IP_Address:
         description: 'Provide your IPv4 or IPv6 end address/range'
         required: true
         type: string
         default: 255.255.255.255  
-        # Only ask for Start_IP_Address when PostgreSQL is selected
-        if: ${{ inputs.environment == 'PostgreSQL' }}                      
+        # # Only ask for Start_IP_Address when PostgreSQL is selected
+        # if: ${{ inputs.environment == 'PostgreSQL' }}                      
 
 # jobs:
 #   setup:
