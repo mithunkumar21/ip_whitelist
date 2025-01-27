@@ -4,15 +4,47 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Select the environment'
+        description: "Select the environment to whitelist IPs for"
         required: true
         type: string
+        default: "UAT"
         options:
           - UAT
           - PROD
           - PostgreSQL
-      ip_address:
-        description: 'Provide your IPv4 or IPv6 address/range'
-        required: true
-        type: string
-        default: 192.x.x.x
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      selected-environment: ${{ inputs.environment }}
+    steps:
+      - name: Set Environment
+        run: echo "Environment: ${{ github.event.inputs.environment }}"
+
+  whitelist-uat:
+    if: ${{ github.event.inputs.environment == 'UAT' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Whitelist IPs for UAT
+        run: |
+          echo "Whitelisting IPs for UAT"
+          # Add your UAT IP whitelisting logic here
+
+  whitelist-prod:
+    if: ${{ github.event.inputs.environment == 'PROD' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Whitelist IPs for PROD
+        run: |
+          echo "Whitelisting IPs for PROD"
+          # Add your PROD IP whitelisting logic here
+
+  whitelist-postgresql:
+    if: ${{ github.event.inputs.environment == 'PostgreSQL' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Whitelist IPs for PostgreSQL
+        run: |
+          echo "Whitelisting IPs for PostgreSQL"
+          # Add your PostgreSQL IP whitelisting logic here
