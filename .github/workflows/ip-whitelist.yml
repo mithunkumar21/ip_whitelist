@@ -16,7 +16,22 @@ on:
         description: 'Provide your IPv4 or IPv6 address/range'
         required: true
         type: string
-        default: 192.x.x.x          
+        default: 192.x.x.x  
+      Firewall_Name:
+        description: 'Firewall rule name'
+        required: true
+        type: string
+        default: Trumio-IP
+      Start_IP_Address:
+        description: 'Provide your IPv4 or IPv6 start address/range'
+        required: true
+        type: string
+        default: 0.0.0.0
+      End_IP_Address:
+        description: 'Provide your IPv4 or IPv6 end address/range'
+        required: true
+        type: string
+        default: 255.255.255.255                
 
 # jobs:
 #   setup:
