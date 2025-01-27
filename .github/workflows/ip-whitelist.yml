@@ -6,7 +6,7 @@ on:
       environment:
         description: "Select the environment to whitelist IPs for"
         required: true
-        type: string
+        type: choice
         default: "UAT"
         options:
           - UAT
