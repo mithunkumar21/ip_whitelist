@@ -21,7 +21,7 @@ on:
       environment:
         description: "Select the environment to whitelist IPs for"
         required: true
-        type: choice
+        type: string
         default: "PostgreSQL"
         options:
           - PostgreSQL
